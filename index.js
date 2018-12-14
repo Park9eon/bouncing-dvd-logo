@@ -51,21 +51,25 @@
         logo.x += STEP * xP;
         logo.y += STEP * yP;
 
-        if (logo.x + logo.width / 2 >= window.innerWidth) {
+        if (logo.x + logo.width / 2 > window.innerWidth) {
             xP = -1;
             logo.tint = randomColor();
+            logo.x = window.innerWidth - logo.width / 2;
         }
-        if (logo.x  <= logo.width / 2) {
+        if (logo.x  < logo.width / 2) {
             xP = 1;
             logo.tint = randomColor();
+            logo.x = logo.width / 2;
         }
-        if (logo.y + logo.height / 2 >= window.innerHeight) {
+        if (logo.y + logo.height / 2 > window.innerHeight) {
             yP = -1;
             logo.tint = randomColor();
+            logo.y = window.innerHeight - logo.height / 2;
         }
-        if (logo.y  <= logo.height / 2) {
+        if (logo.y  < logo.height / 2) {
             yP = 1;
             logo.tint = randomColor();
+            logo.y = logo.height / 2;
         }
     }
 
